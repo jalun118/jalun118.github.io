@@ -333,7 +333,7 @@ button {
     width: 30px;
 }
 
-.conte-btn:hover > .btn {
+.conte-btn:hover>.btn {
     transform: translateY(-5px) translateX(-5px);
     box-shadow: 5px 5px 4px 1px rgba(55, 58, 248, 0.404);
 }
@@ -715,16 +715,16 @@ p {
 
 .link {
     text-decoration: none;
-    background-image: linear-gradient(-160deg, #7700ff,#1500d6 , #ff0000, #fbff00);
-     
+    background-image: linear-gradient(-160deg, #7700ff, #1500d6, #ff0000, #fbff00);
+
     -webkit-background-clip: text;
     background-clip: text;
-     
+
     color: transparent;
-    
+
     font-family: var(--sus-font-family);
     font-weight: bold;
-    font-size:40px;
+    font-size: 40px;
 }
 
 /* 404 */
@@ -749,24 +749,28 @@ p {
     animation-fill-mode: both;
     animation-name: tranformsUp;
 }
+
 .pesan-404 {
     animation-duration: 1.6s;
     animation-delay: 0.5s;
     animation-fill-mode: both;
     animation-name: tranformsLeft;
 }
+
 .icon-404 {
     animation-duration: 1.6s;
     animation-delay: 1s;
     animation-fill-mode: both;
     animation-name: tranformsRight;
 }
+
 .pesan-2-404 {
     animation-duration: 1.6s;
     animation-fill-mode: both;
     animation-delay: 2s;
     animation-name: tranformsDown;
 }
+
 .danger-404 {
     animation-duration: 1.5s;
     animation-fill-mode: both;
@@ -778,30 +782,37 @@ p {
     0% {
         transform: translateY(-100%);
     }
+
     100% {
         transform: translate(0);
     }
 }
+
 @keyframes tranformsDown {
     0% {
         transform: translateY(105%);
     }
+
     100% {
         transform: translate(0);
     }
 }
+
 @keyframes tranformsRight {
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translate(0);
     }
 }
+
 @keyframes tranformsLeft {
     0% {
         transform: translateX(100%);
     }
+
     100% {
         transform: translate(0);
     }
@@ -818,16 +829,20 @@ p {
         transform: scale(1);
         color: #ff7300;
     }
+
     25% {
         color: #ff0000;
     }
+
     50% {
         transform: scale(2);
         color: #ff7300;
     }
+
     75% {
         color: #ff0000;
     }
+
     100% {
         transform: scale(1);
         color: #ff7300;
@@ -1019,4 +1034,149 @@ p {
     line-height: 1.5rem;
     border-top: 1px solid;
     border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+/* loading menu */
+.Hidden {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+.showbox {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    z-index: 99999;
+}
+.loader {
+    position: fixed;
+    top: 50%;
+    margin: 0 auto;
+    width: 100px;
+    z-index: 100000;
+}
+
+.loader:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.circular {
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 1.5s linear infinite;
+    height: 100%;
+    transform-origin: center center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    -webkit-animation: dash 1s ease-in-out infinite, color 6s ease-in-out infinite;
+    animation: dash 1s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: round;
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+    }
+
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+    }
+
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+    }
+}
+
+/* @-webkit-keyframes color {
+
+    100%,
+    0% {
+        stroke: #d62d20;
+    }
+
+    40% {
+        stroke: #0057e7;
+    }
+
+    66% {
+        stroke: #008744;
+    }
+
+    80%,
+    90% {
+        stroke: #ffa700;
+    }
+} */
+
+@-webkit-keyframes color {
+    0% {
+        stroke: #0057e7;
+    }
+    100% {
+        stroke: #0057e7;
+    }
+}
+@keyframes color {
+    0% {
+        stroke: #0057e7;
+    }
+    100% {
+        stroke: #0057e7;
+    }
+}
+
+body {
+    background-color: #eee;
+}
+
+.showbox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5%;
 }

@@ -144,3 +144,18 @@ function scrollCheck() {
         tblScU.classList.add("hidden");
     }
 }
+
+// const body = document.querySelector("body");
+const BoxLoad = document.querySelector(".showbox");
+
+window.addEventListener("unload", () => {
+    if(BoxLoad.classList == "Hidden") {
+        BoxLoad.classList.remove("Hidden")
+    }
+})
+
+window.addEventListener("load", () => {
+    if(BoxLoad.classList != "Hidden") {
+        BoxLoad.classList.add("Hidden")
+    }
+});
